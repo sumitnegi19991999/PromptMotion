@@ -1,88 +1,55 @@
 // import Image from "next/image";
 import Link from "next/link";
-import { LinkedinIcon, TwitterIcon } from "lucide-react";
-
+import {
+  Brain,
+  LinkedinIcon,
+  Mail,
+  MessageCircle,
+  Twitter,
+  TwitterIcon,
+} from "lucide-react";
 
 export default async function Footer() {
   return (
-    <footer className="bg-black text-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and About Section */}
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <p className="text-sm">
-                As an AI-first company, DreamLaunch collaborates with industry leaders to uncover innovation opportunities by developing and disrupting products that drive significant business impact.
-              </p>
+    <footer className="border-t border-gray-800 bg-gray-900 px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col items-center justify-between md:flex-row">
+          <div className="mb-6 flex items-center space-x-2 md:mb-0">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 to-emerald-400">
+              <Brain className="h-5 w-5 text-white" />
             </div>
+            <span className="bg-gradient-to-r from-purple-400 to-emerald-400 bg-clip-text text-xl font-bold text-transparent">
+              PromptMotion
+            </span>
           </div>
 
-          {/* Links Section */}
-          <div>
-            <h3 className="text-gray-400 uppercase text-sm mb-4">Links</h3>
-            <div className="space-y-2">
-              <Link href="/careers" className="block text-sm hover:text-blue-500">Careers</Link>
-              <Link href="/contact-us" className="block text-sm hover:text-blue-500">Contact us</Link>
-              <Link href="/privacy-policy" className="block text-sm hover:text-blue-500">Privacy Policy</Link>
-            </div>
-          </div>
-
-          {/* Practices Section */}
-          <div>
-            <h3 className="text-gray-400 uppercase text-sm mb-4">Practices</h3>
-            <div className="space-y-2">
-              <Link href="/consulting" className="block text-sm hover:text-blue-500">Consulting</Link>
-              <Link href="/research" className="block text-sm hover:text-blue-500">Research</Link>
-              <Link href="/design" className="block text-sm hover:text-blue-500">Design</Link>
-              <Link href="/engineering" className="block text-sm hover:text-blue-500">Engineering</Link>
-              <Link href="/analytics" className="block text-sm hover:text-blue-500">Analytics</Link>
-            </div>
-          </div>
-
-          {/* Our Presence Section */}
-          <div>
-            <h3 className="text-gray-400 uppercase text-sm mb-4">Our Presence</h3>
-            <div className="space-y-2">
-              <p className="block text-sm hover:text-blue-500">USA</p>
-              <p className="block text-sm hover:text-blue-500">Dubai</p>
-              <p className="block text-sm hover:text-blue-500">India</p>
-            </div>
-            <div className="mt-8 gap-2">
-              <p className="text-sm">Say hello</p>
-              <a href="mailto:connect@dreamlaunch.studio" className="text-md text-blue-500 hover:text-blue-400 mt-2">connect@dreamlaunch.studio</a>
-            </div>
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="mt-12">
-          <h2 className="text-xl font-semibold mb-4">To be updated with our latest insights join us</h2>
-          <form className="flex gap-2 max-w-md">
-            <input
-              type="email"
-              placeholder="Your Email ID"
-              className="flex-1 bg-transparent border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-blue-500"
-            />
-            <button
-              type="submit"
-              className="bg-white text-[#0A0F24] px-6 py-2 rounded hover:bg-gray-200 transition-colors"
+          <div className="mb-6 flex space-x-6 md:mb-0">
+            <a
+              href="mailto:hello@promptmotion.ai"
+              className="flex items-center text-gray-400 transition-colors hover:text-white"
             >
-              →
-            </button>
-          </form>
+              <Mail className="mr-2 h-5 w-5" />
+              hello@promptmotion.ai
+            </a>
+            <a
+              href="#"
+              className="flex items-center text-gray-400 transition-colors hover:text-white"
+            >
+              <Twitter className="mr-2 h-5 w-5" />
+              @PromptMotion
+            </a>
+            <a
+              href="#"
+              className="flex items-center text-gray-400 transition-colors hover:text-white"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Discord
+            </a>
+          </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="flex flex-row justify-between  w-full mt-12 pt-8 border-t border-gray-800">
-          <p className="text-sm text-gray-400">© {new Date().getFullYear()}. All Rights Reserved</p>
-          <div className="flex gap-4">
-            <Link href="https://www.x.com/dreamlaunchhq">
-            <TwitterIcon className="w-6 h-6 text-gray-400" />
-            </Link>
-            <Link href="https://www.linkedin.com/company/dream-launch-studios">
-            <LinkedinIcon className="w-6 h-6 text-gray-400" />
-            </Link>
-          </div>
+        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
+          <p>&copy; 2025 PromptMotion. All rights reserved.</p>
         </div>
       </div>
     </footer>
