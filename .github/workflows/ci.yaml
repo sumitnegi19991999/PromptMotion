@@ -1,0 +1,27 @@
+name: CI
+
+on: [push]
+
+jobs:
+  semantic-commit-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get last commit message
+        id: get_commit
+        run: echo "message=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+
+      - name: Check for semantic commit message
+        if: ${{ contains(steps.get_commit.outputs.message, ':') }}
+        run: |
+          echo "✅ Semantic commit detected: ${{ steps.get_commit.outputs.message }}"
+          exit 0
+
+      - name: Fail if commit is not semantic
+        if: ${{ !contains(steps.get_commit.outputs.message, ':') }}
+        run: |
+          echo "❌ Commit message is not semantic: '${{ steps.get_commit.outputs.message }}'"
+          exit 1
